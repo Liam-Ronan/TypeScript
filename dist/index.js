@@ -20,14 +20,14 @@ let user = {
     age: 23,
     id: 4,
 };
-console.log(user.firstName = "liam");
+console.log((user.firstName = "liam"));
 user.id = 5;
 ////////////
 /* Type interface - object literals */
 ////////////
 let person = {
     name: "luigi",
-    score: 34
+    score: 34,
 };
 person.name = "ellie";
 person.score = 43;
@@ -66,7 +66,7 @@ let title;
 age = false;
 title = 25;
 title = {
-    hello: "world"
+    hello: "world",
 };
 /////////
 /* Any type - Arrays */
@@ -81,4 +81,26 @@ function addTogether(value) {
     return value + value;
 }
 const resultOne = addTogether("hello");
-console.log(resultOne);
+///////////////
+/* Tuples */
+//////////////
+let tupleOne = ["hello", 45, true];
+///////////////
+/* Tuples examples */
+///////////////
+let hsla;
+hsla = [200, "100%", "50%", 1];
+let xy;
+xy = [54.23, 65.76];
+function useCoords() {
+    const lat = 100;
+    const lng = 50;
+    return [lat, lng];
+}
+const [lat, lng] = useCoords();
+///////////////
+/* Named tuples */
+//////////////
+let userOne;
+userOne = ["Ellie", 56];
+console.log(userOne[0]);
