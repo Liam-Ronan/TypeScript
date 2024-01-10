@@ -20,7 +20,7 @@ let user = {
     age: 23,
     id: 4,
 };
-user.firstName = "liam";
+console.log(user.firstName = "liam");
 user.id = 5;
 ////////////
 /* Type interface - object literals */
@@ -32,3 +32,53 @@ let person = {
 person.name = "ellie";
 person.score = 43;
 const score = person.score;
+console.log(score);
+/////////////
+/* Functions */
+/////////////
+function addNum(num, numTwo) {
+    return num + numTwo;
+}
+const subtractNumbers = (a, b) => {
+    return a - b;
+};
+console.log(addNum(23, 4));
+console.log(subtractNumbers(5, 2));
+let arrayOne = [1, 5, 3, 2, 1];
+function addAllNums(items) {
+    const total = items.reduce((a, c) => a + c);
+    console.log(total);
+}
+addAllNums(arrayOne);
+///////////////
+/* Return type interference */
+///////////////
+function greeting(name, greeting) {
+    return `${greeting}, ${name}`;
+}
+const result = greeting("Mario", "Good Morning!");
+console.log(result);
+/////////
+/* Any type */
+////////
+let age;
+let title;
+age = false;
+title = 25;
+title = {
+    hello: "world"
+};
+/////////
+/* Any type - Arrays */
+/////////
+let anything = ["hello", true, 30, null];
+anything.push({ id: 123 });
+console.log(anything);
+////////////////////
+/* Functions - any */
+////////////////////
+function addTogether(value) {
+    return value + value;
+}
+const resultOne = addTogether("hello");
+console.log(resultOne);

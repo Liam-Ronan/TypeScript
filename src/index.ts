@@ -29,7 +29,7 @@ let user: {
     id: 4,
 }
 
-user.firstName = "liam"
+console.log(user.firstName = "liam")
 user.id = 5
 
 
@@ -46,3 +46,71 @@ person.name = "ellie"
 person.score = 43
 
 const score = person.score
+console.log(score)
+
+
+/////////////
+/* Functions */
+/////////////
+function addNum(num: number, numTwo: number): number {
+    return num + numTwo
+}
+
+const subtractNumbers = (a:number, b:number): number => {
+    return a - b
+}
+console.log(addNum(23, 4))
+console.log(subtractNumbers(5, 2))
+
+
+let arrayOne: number[] = [1, 5, 3, 2, 1];
+
+function addAllNums(items: number[]): void{
+    const total = items.reduce((a, c) => a + c)
+    console.log(total)
+}
+
+addAllNums(arrayOne)
+
+///////////////
+/* Return type interference */
+///////////////
+function greeting(name: string, greeting: string) {
+    return `${greeting}, ${name}`
+}
+
+const result = greeting("Mario", "Good Morning!")
+console.log(result)
+
+/////////
+/* Any type */
+////////
+
+let age: any
+let title
+
+age = false;
+
+title = 25
+title = {
+    hello: "world"
+}
+
+/////////
+/* Any type - Arrays */
+/////////
+
+let anything: any[] = ["hello", true, 30, null]
+anything.push({id: 123})
+console.log(anything)
+
+////////////////////
+/* Functions - any */
+////////////////////
+
+function addTogether(value: any): any {
+    return value + value
+}
+
+const resultOne = addTogether("hello")
+console.log(resultOne)
