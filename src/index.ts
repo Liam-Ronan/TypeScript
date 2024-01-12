@@ -144,3 +144,157 @@ let userOne: [name: string, age: number];
 
 userOne = ["Ellie", 56];
 console.log(userOne[0]);
+
+////////////
+/* Interfaces */
+///////////
+
+interface Author {
+	name: string,
+	avatar: string
+}
+
+const authorOne: Author = {name: "luigi", avatar: "/img/luigi.png"}
+
+interface Post {
+	title: string,
+	body: string,
+	tags: string[],
+	create_at: Date,
+	author: Author
+}
+
+const newPost: Post = {
+	title: "hello",
+	body: "something interesting",
+	tags: ['gaming', 'tech'],
+	create_at: new Date(),
+	author: authorOne
+}
+
+///////////
+/* Interface as argument types */
+///////////
+
+function createPost(post: Post): void {
+	console.log(`created post ${post.title} By ${post.author.name}`)
+}
+
+createPost(newPost)
+
+
+//////////////////
+/* Interfaces - Arrays */
+//////////////////
+let posts: Post[] = []
+
+posts.push(newPost)
+console.log(posts)
+
+
+//////////////////
+/* Type aliases */
+//////////////////
+
+//Example 1 - Tuple
+type rgb = [number, number, number]
+
+function getRandomColour(): rgb {
+	const r = Math.floor(Math.random() * 255);
+	const g = Math.floor(Math.random() * 255);
+	const b = Math.floor(Math.random() * 255);
+
+	return [r,g,b]
+}
+
+const colour = getRandomColour()
+const colourTwo = getRandomColour()
+console.log(colour, colourTwo)
+
+//Example 2 - object literal
+type User = {
+	name: string
+	score: number
+}
+
+const userThree: User = {name: "mario", score: 23}
+
+function formatUser(user: User): void {
+	console.log(`${user.name} has a score of ${user.score}`)
+}
+
+formatUser(userThree)
+formatUser({ name: 'yoshi', score: 100 })
+
+
+/////////////
+/* Union Types */
+/////////////
+let someId: number | string
+someId = 2
+
+let email: string | null = null
+email = "liam@gmail.com"
+email = null
+
+type Id = number | string
+let anotherId: Id
+
+anotherId = "dfsfdsdf"
+anotherId = 6
+
+function swapIdType(id: Id): Id {
+	//Can only use props and methods common to both
+	//Numbers and string types
+	//parseInt() not allowed
+	parseInt(id)
+
+	return id
+}
+
+swapIdType('5')
+
+
+//////////////
+/* Type guards */
+///////////////
+
+type IdOne = number | string
+
+function swapId(id: IdOne) {
+	if(typeof id === 'string') {
+		return parseInt(id)
+	}
+	else {
+		return id.toString()
+	}
+}
+
+const idOne = swapId(1)
+const idTwo = swapId('2')
+
+console.log(idOne, idTwo)
+
+
+/////////////////
+/* Tagged interfaces */
+////////////////
+interface userOne {
+	type: 'user'
+	username: string
+	email: string
+	id: Id
+}
+
+interface Person {
+	type: 'person'
+	firstName: string
+	age: number
+	id: Id
+}
+
+function logDetails(value: userOne | Person): void {
+	if(value.type === 'user') {
+		console.log(value.email, value.username)
+	}
+}

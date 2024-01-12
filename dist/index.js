@@ -104,3 +104,71 @@ const [lat, lng] = useCoords();
 let userOne;
 userOne = ["Ellie", 56];
 console.log(userOne[0]);
+const authorOne = { name: "luigi", avatar: "/img/luigi.png" };
+const newPost = {
+    title: "hello",
+    body: "something interesting",
+    tags: ['gaming', 'tech'],
+    create_at: new Date(),
+    author: authorOne
+};
+///////////
+/* Interface as argument types */
+///////////
+function createPost(post) {
+    console.log(`created post ${post.title} By ${post.author.name}`);
+}
+createPost(newPost);
+//////////////////
+/* Interfaces - Arrays */
+//////////////////
+let posts = [];
+posts.push(newPost);
+console.log(posts);
+function getRandomColour() {
+    const r = Math.floor(Math.random() * 255);
+    const g = Math.floor(Math.random() * 255);
+    const b = Math.floor(Math.random() * 255);
+    return [r, g, b];
+}
+const colour = getRandomColour();
+const colourTwo = getRandomColour();
+console.log(colour, colourTwo);
+const userThree = { name: "mario", score: 23 };
+function formatUser(user) {
+    console.log(`${user.name} has a score of ${user.score}`);
+}
+formatUser(userThree);
+formatUser({ name: 'yoshi', score: 100 });
+/////////////
+/* Union Types */
+/////////////
+let someId;
+someId = 2;
+let email = null;
+email = "liam@gmail.com";
+email = null;
+let anotherId;
+anotherId = "dfsfdsdf";
+anotherId = 6;
+function swapIdType(id) {
+    //Can only use props and methods common to both
+    //Numbers and string types
+    //parseInt() not allowed
+    parseInt(id);
+    return id;
+}
+swapIdType('5');
+function swapId(id) {
+    if (typeof id === 'string') {
+        return parseInt(id);
+    }
+    else {
+        return id.toString();
+    }
+}
+const idOne = swapId(1);
+const idTwo = swapId('2');
+console.log(idOne, idTwo);
+function logDetails(value) {
+}
