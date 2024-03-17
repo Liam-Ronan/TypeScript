@@ -1,5 +1,3 @@
-
-
 //*************** */
 /*
  * Object Literals *
@@ -34,7 +32,6 @@ let person = {
 	score: 34,
 };
 
-
 //********************** */
 //* Return type inference
 //********************** */
@@ -43,8 +40,7 @@ function greeting(greeting: string, name: string) {
 }
 
 const result0 = greeting("Good Morning!", "Mario");
-console.log("type inference:", result);
-
+console.log("type inference:", result0);
 
 //************** */
 //* Type Aliases
@@ -80,7 +76,6 @@ function formatUser(user: User): void {
 formatUser(userThree);
 formatUser({ name: "yoshi", score: 100 });
 
-
 //************ */
 //*Type Guards //
 //************** */
@@ -97,7 +92,6 @@ function swapId(id: IdOne) {
 
 const idOne = swapId(1);
 const idTwo = swapId("2");
-
 
 //************* */
 //* Extending type aliases
@@ -131,4 +125,4 @@ function printHuman(tiger: Tiger) {
 	console.log(tiger.id, tiger.email, tiger.firstName);
 }
 
-printHuman(humanTwo)
+printHuman(humanTwo);

@@ -1,7 +1,12 @@
 "use strict";
+//********** */
+//* CSV Writer Refactor
+//********** */
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.CSVWriter = void 0;
 const fs_1 = require("fs");
 class CSVWriter {
+    //* If we create a new CSV writer and pass in payment as the type - Then keyof T inside an array means we can have an array of strings but the elements(strings inside the array) can only be keys of the object type specified above ^^
     constructor(columns) {
         this.columns = columns;
         this.csv = this.columns.join(" | ") + "\n";
@@ -16,16 +21,9 @@ class CSVWriter {
         this.csv += rows.join(" \n ");
         console.log(this.csv);
     }
-    formatRow(p) {
-        return this.columns.map((col) => p[col]).join(" | ");
+    formatRow(value) {
+        //* columns will match up with the keys of the object - for each column(property) we are getting the value of that column and joining them with a line as seen in the join method below
+        return this.columns.map((col) => value[col]).join(" | ");
     }
 }
-const writer = new CSVWriter(["id", "amount", "to", "notes"]);
-writer.addRows([
-    { id: 1, amount: 50, to: "Yoshi", notes: "design" },
-    { id: 2, amount: 92, to: "Mario", notes: "develop" },
-    { id: 3, amount: 88, to: "Peach", notes: "Figma" },
-    { id: 4, amount: 10, to: "Koopa", notes: "Jira" },
-    { id: 5, amount: 23, to: "Bowser", notes: "QA" },
-]);
-//writer.save("./data/payments.csv");
+exports.CSVWriter = CSVWriter;

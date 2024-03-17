@@ -28,7 +28,7 @@ function greeting(greeting, name) {
     return `${greeting}, ${name}`;
 }
 const result0 = greeting("Good Morning!", "Mario");
-console.log("type inference:", result);
+console.log("type inference:", result0);
 function getRandomColour() {
     const r = Math.floor(Math.random() * 255);
     const g = Math.floor(Math.random() * 255);
