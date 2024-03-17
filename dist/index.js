@@ -27,7 +27,7 @@ let person = {
 function greeting(greeting, name) {
     return `${greeting}, ${name}`;
 }
-const result = greeting("Good Morning!", "Mario");
+const result0 = greeting("Good Morning!", "Mario");
 console.log("type inference:", result);
 function getRandomColour() {
     const r = Math.floor(Math.random() * 255);
@@ -44,26 +44,6 @@ function formatUser(user) {
 }
 formatUser(userThree);
 formatUser({ name: "yoshi", score: 100 });
-//************ */
-//* Union types //
-//************* */
-let someId;
-someId = 2;
-someId = "2";
-let email = null;
-email = "liam8393@gmail.com";
-email = null;
-let anotherId;
-anotherId = "dfsfdsdf";
-anotherId = 6;
-function swapIdType(id) {
-    //* Can only use props and methods common to both
-    //* Numbers and string types
-    //* parseInt() not allowed
-    //* parseInt(id)
-    return id;
-}
-swapIdType("5");
 function swapId(id) {
     if (typeof id === "string") {
         return parseInt(id);
@@ -87,6 +67,6 @@ const humanThree = {
     email: "peach&netninja.dev",
 };
 function printHuman(tiger) {
-    console.log(tiger.id, tiger.email);
+    console.log(tiger.id, tiger.email, tiger.firstName);
 }
 printHuman(humanTwo);
