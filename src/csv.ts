@@ -7,7 +7,7 @@ import { appendFileSync } from "fs";
 export class CSVWriter<T> {
 	//* If we create a new CSV writer and pass in payment as the type - Then keyof T inside an array means we can have an array of strings but the elements(strings inside the array) can only be keys of the object type specified above ^^
 	constructor(private columns: (keyof T)[]) {
-		this.csv = this.columns.join(" | ") + "\n";
+		this.csv = this.columns.join(",") + "\n";
 	}
 
 	private csv: string;
@@ -27,6 +27,6 @@ export class CSVWriter<T> {
 
 	private formatRow(value: T): string {
 		//* columns will match up with the keys of the object - for each column(property) we are getting the value of that column and joining them with a line as seen in the join method below
-		return this.columns.map((col) => value[col]).join(" | ");
+		return this.columns.map((col) => value[col]).join(",");
 	}
 }

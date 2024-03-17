@@ -1,6 +1,6 @@
-id | amount | to | notes
-1 | 50 | Yoshi | design 
- 2 | 92 | Mario | develop 
- 3 | 88 | Peach | Figma 
- 4 | 10 | Koopa | Jira 
- 5 | 23 | Bowser | QA
+id,amount,to,notes
+1,50,Yoshi,design 
+ 2,92,Mario,develop 
+ 3,88,Peach,Figma 
+ 4,10,Koopa,Jira 
+ 5,23,Bowser,QA
