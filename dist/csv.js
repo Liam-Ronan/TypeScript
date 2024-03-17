@@ -28,4 +28,4 @@ writer.addRows([
     { id: 4, amount: 10, to: "Koopa", notes: "Jira" },
     { id: 5, amount: 23, to: "Bowser", notes: "QA" },
 ]);
-writer.save("./data/payments.csv");
+//writer.save("./data/payments.csv");
