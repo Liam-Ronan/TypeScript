@@ -23,7 +23,7 @@ const result = logAndReturnValue("mario");
 const result1 = logAndReturnValue(45);
 //********* */
 //* Example 2
-//******** */
+//********* */
 const getRandomArrayValue = (values) => {
     const i = Math.floor(Math.random() * values.length);
     return values[i];
@@ -77,12 +77,12 @@ class dataCollection {
     }
 }
 const users = new dataCollection([
-    { name: 'Liam', score: 65, id: 1 },
-    { name: 'Amy', score: 23, id: 2 },
-    { name: 'Damien', score: 212, id: 3 }
+    { name: "Liam", score: 65, id: 1 },
+    { name: "Amy", score: 23, id: 2 },
+    { name: "Damien", score: 212, id: 3 },
 ]);
-users.add({ name: 'mario', score: 53, id: 4 });
+users.add({ name: "mario", score: 53, id: 4 });
 // users.deleteOne(2)
-console.log('load one - ', users.loadOne());
-console.log('load all - ', users.loadAll());
+console.log("load one - ", users.loadOne());
+console.log("load all - ", users.loadAll());
 // console.log('highest score - ', users.highestScore())

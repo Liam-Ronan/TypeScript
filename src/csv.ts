@@ -1,6 +1,6 @@
-//********** */
+//******************* */
 //* CSV Writer Refactor
-//********** */
+//******************* */
 
 import { appendFileSync } from "fs";
 
@@ -24,6 +24,8 @@ export class CSVWriter<T> {
 		this.csv += rows.join(" \n ");
 		console.log(this.csv);
 	}
+
+
 
 	private formatRow(value: T): string {
 		//* columns will match up with the keys of the object - for each column(property) we are getting the value of that column and joining them with a line as seen in the join method below

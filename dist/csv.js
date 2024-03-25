@@ -1,7 +1,7 @@
 "use strict";
-//********** */
+//******************* */
 //* CSV Writer Refactor
-//********** */
+//******************* */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CSVWriter = void 0;
 const fs_1 = require("fs");
